@@ -24,18 +24,11 @@ namespace ConsoleHostSample
                 .ConfigureServices((context, services) =>
                 {
                     services.Configure<WorkerOptions>(context.Configuration.GetSection(WorkerOptions.Settings));
-                    services.AddHostedService<LoopingHostedService>();
-                    //services.AddHostedService<LoopingBackgroundService>();
+                    //services.AddHostedService<LoopingHostedService>();
+                    services.AddHostedService<LoopingBackgroundService>();
                 });
         }
     }
-
-    /* 2 ways to start a background service
-     * Deriving from BackgroundService or implementing IHostedService
-     * Either way seems to work, BackgroundService is probably better until/unless
-     * there is some reason driving the necessity of IHostedService
-     */
-
     public class LoopingBackgroundService : BackgroundService
     {
         private readonly ILogger<LoopingBackgroundService> logger;
