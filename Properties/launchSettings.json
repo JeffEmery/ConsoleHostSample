@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ConsoleHostSample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "DOTNET_APPLICATIONNAME": "ConsoleHostSample"
+      }
+    }
+  }
+}
